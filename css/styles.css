@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "reset.css";
 @import "status-bar.css";
-@import "variable.css";
+@import "variables.css";
 
 /* 화면이 너무 긴 경우 박스높이 고정*/
 @media screen and (min-height:1200px){
@@ -66,21 +66,37 @@ body {
   padding: 20px 0px;
   font-size : 20px;
   border:none;
+}
+
+#login-form > input:focus{
+  border-color: var(--yellow);
+}
+
+#login-form>input:not([type="submit"]){
   border-bottom: 2px solid #D7D7D7 ;
+  transition: border-color .3s ease-in-out;
 }
 
 #login-form>input::placeholder{
   color : #A2A2A2;
 }
+
+#login-form > input[type="submit"]{
+  margin-top:2.5vh;
+  background-color: #F6F6F6;
+  transition: background-color .3s ease-in-out;
+  cursor : pointer; /* not-allowed, progress... */
+}
+
+#login-form > input[type="submit"]:hover{
+  background-color: var(--yellow);
+}
+
 #login-form > input:nth-child(3){
   margin-top:5vh;
-  border-bottom:none;
-}
-#login-form > input:nth-child(4){
-  margin-top:2.5vh;
-  border-bottom:none;
 }
 
-#login-form > input:focus{
-
+#login-form > a {
+  text-align: center;
+  text-decoration: none;
 }
